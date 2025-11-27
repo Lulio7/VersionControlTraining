@@ -2,18 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "357b78d7bdea82ce43de",
   "position": {
-    "x": 417.17011128775835,
-    "y": 404.96025437201911,
+    "x": 404.96025437201911,
+    "y": 426.32750397456283,
     "z": 2,
     "height": 273.70429252782196,
-    "width": 561.65341812400641,
+    "width": 851.637519872814,
     "tabOrder": 2
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Values": {
+        "Rows": {
           "projections": [
             {
               "field": {
@@ -27,8 +27,44 @@
                 }
               },
               "queryRef": "Dataset salary 2024.company_location",
-              "nativeQueryRef": "company_location"
+              "nativeQueryRef": "Company Location",
+              "active": true,
+              "displayName": "Company Location"
             },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dataset salary 2024"
+                    }
+                  },
+                  "Property": "experience_level"
+                }
+              },
+              "queryRef": "Dataset salary 2024.experience_level",
+              "nativeQueryRef": "experience_level",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dataset salary 2024"
+                    }
+                  },
+                  "Property": "job_title"
+                }
+              },
+              "queryRef": "Dataset salary 2024.job_title",
+              "nativeQueryRef": "job_title",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
             {
               "field": {
                 "Aggregation": {
@@ -46,18 +82,178 @@
                 }
               },
               "queryRef": "Sum(Dataset salary 2024.salary_in_usd)",
-              "nativeQueryRef": "Sum of salary_in_usd"
+              "nativeQueryRef": "Salary I USD",
+              "displayName": "Salary I USD"
             }
           ]
         }
       }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Dataset salary 2024.company_location"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Dataset salary 2024.experience_level"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Dataset salary 2024.job_title"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "702.778384020588D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dataset salary 2024.company_location"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "125.2972992865682D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Dataset salary 2024.salary_in_usd)"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "01ba373b63207478234b",
+        "name": "5f2a2fedc9b76800417c",
         "field": {
           "Column": {
             "Expression": {
@@ -71,7 +267,7 @@
         "type": "Categorical"
       },
       {
-        "name": "827a9740b80ed04c4074",
+        "name": "e5ab294aee9470104651",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -88,6 +284,34 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "12408964992379360ae5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset salary 2024"
+              }
+            },
+            "Property": "experience_level"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f493e9c6a0928d40e0c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset salary 2024"
+              }
+            },
+            "Property": "job_title"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
