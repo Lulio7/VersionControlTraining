@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "357b78d7bdea82ce43de",
+  "position": {
+    "x": 417.17011128775835,
+    "y": 404.96025437201911,
+    "z": 2,
+    "height": 273.70429252782196,
+    "width": 561.65341812400641,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dataset salary 2024"
+                    }
+                  },
+                  "Property": "company_location"
+                }
+              },
+              "queryRef": "Dataset salary 2024.company_location",
+              "nativeQueryRef": "company_location"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dataset salary 2024"
+                        }
+                      },
+                      "Property": "salary_in_usd"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Dataset salary 2024.salary_in_usd)",
+              "nativeQueryRef": "Sum of salary_in_usd"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "01ba373b63207478234b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset salary 2024"
+              }
+            },
+            "Property": "company_location"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "827a9740b80ed04c4074",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dataset salary 2024"
+                  }
+                },
+                "Property": "salary_in_usd"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

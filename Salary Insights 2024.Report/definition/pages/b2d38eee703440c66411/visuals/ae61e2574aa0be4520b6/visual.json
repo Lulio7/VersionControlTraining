@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "ae61e2574aa0be4520b6",
+  "position": {
+    "x": 34.5945945945946,
+    "y": 80.381558028616851,
+    "z": 0,
+    "height": 488.39427662957075,
+    "width": 322.543720190779
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dataset salary 2024"
+                    }
+                  },
+                  "Property": "experience_level"
+                }
+              },
+              "queryRef": "Dataset salary 2024.experience_level",
+              "nativeQueryRef": "experience_level",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dataset salary 2024"
+                        }
+                      },
+                      "Property": "salary"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Dataset salary 2024.salary)",
+              "nativeQueryRef": "Sum of salary"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dataset salary 2024"
+                      }
+                    },
+                    "Property": "salary"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "95014fc9d4a8db9da8cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dataset salary 2024"
+              }
+            },
+            "Property": "experience_level"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "15f4133f907a11454d82",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dataset salary 2024"
+                  }
+                },
+                "Property": "salary"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

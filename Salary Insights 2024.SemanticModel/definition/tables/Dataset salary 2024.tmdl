@@ -1,0 +1,108 @@
+table 'Dataset salary 2024'
+	lineageTag: 63493f4e-17e9-4bff-b266-3958eda2db28
+
+	column work_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e377da8-458a-4aea-8f72-d289952eea35
+		summarizeBy: sum
+		sourceColumn: work_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column experience_level
+		dataType: string
+		lineageTag: 3d45cd5d-59c4-4eba-9887-cd11844c02f6
+		summarizeBy: none
+		sourceColumn: experience_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column employment_type
+		dataType: string
+		lineageTag: f156d5ec-1ef6-4e5f-97f2-65834db21be4
+		summarizeBy: none
+		sourceColumn: employment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_title
+		dataType: string
+		lineageTag: 0c91938c-2365-48b6-b7b2-dad025e1fa79
+		summarizeBy: none
+		sourceColumn: job_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary
+		dataType: int64
+		formatString: 0
+		lineageTag: 037c6567-3b0d-4115-a1cf-110212a60752
+		summarizeBy: sum
+		sourceColumn: salary
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary_currency
+		dataType: string
+		lineageTag: 52e597de-301b-4f78-bfe1-984256e7797a
+		summarizeBy: none
+		sourceColumn: salary_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary_in_usd
+		dataType: int64
+		formatString: 0
+		lineageTag: b07e6811-abf3-453a-9320-d13434ff1de6
+		summarizeBy: sum
+		sourceColumn: salary_in_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_residence
+		dataType: string
+		lineageTag: d2ad8c66-bab0-4a9b-a319-596633113847
+		summarizeBy: none
+		sourceColumn: employee_residence
+
+		annotation SummarizationSetBy = Automatic
+
+	column remote_ratio
+		dataType: int64
+		formatString: 0
+		lineageTag: a9389c5b-e79c-4e54-b65a-68655eb924dd
+		summarizeBy: sum
+		sourceColumn: remote_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_location
+		dataType: string
+		lineageTag: d4eae9d0-b572-4aad-8329-388b09809492
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: company_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_size
+		dataType: string
+		lineageTag: 1acbce01-7c04-45e9-bd10-a70d8fc074b0
+		summarizeBy: none
+		sourceColumn: company_size
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dataset salary 2024' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\lourd\OneDrive\Imágenes\Version Control\VersionControlTraining\Dataset salary 2024.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"work_year", Int64.Type}, {"experience_level", type text}, {"employment_type", type text}, {"job_title", type text}, {"salary", Int64.Type}, {"salary_currency", type text}, {"salary_in_usd", Int64.Type}, {"employee_residence", type text}, {"remote_ratio", Int64.Type}, {"company_location", type text}, {"company_size", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

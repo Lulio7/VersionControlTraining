@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Salary Insights 2024"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3c18a081-9a23-46a4-8d75-d8b9829f678a"
+  }
+}
