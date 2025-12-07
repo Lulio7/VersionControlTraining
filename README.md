@@ -52,7 +52,7 @@ Asegurate de tener:
 
 Configuración inicial de Git (solo una vez):
 
-``bash
+Ingresa a la terminal individualmente los siguientes comandos:
 git config --global user.name "Tu Nombre"
 git config --global user.email "tuemail@example.com"
 
@@ -156,8 +156,7 @@ Esto permite desplegar el reporte desde Git hacia Power BI Service.
 
 ⚠️ Solo si nadie más está usando esa branch.
 
-Volver al commit anterior:
+Volver al commit anterior desde la terminal:
 
-``bash
 git reset --hard HEAD~1
 git push origin <branch> --force
