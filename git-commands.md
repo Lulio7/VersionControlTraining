@@ -3,81 +3,81 @@ Comandos básicos de Git para trabajar con proyectos PBIP + Power BI
 
 ## 🧭 Configuración inicial
 ``bash
-Configurar usuario
+Configurar usuario: 
 git config --global user.name "Tu Nombre"
 git config --global user.email "tuemail@example.com"
 
-Ver configuración actual
+Ver configuración actual: 
 git config --list
 
-# 📥 Clonar un repositorio
+## 📥 Clonar un repositorio: 
 git clone https://github.com/usuario/repositorio.git
 
-# 🌿 Ramas
+## 🌿 Ramas
 
-Ver ramas existentes
+Ver ramas existentes: 
 git branch
 
-Crear nueva rama
+Crear nueva rama: 
 git checkout -b nombre-de-rama
 
-Cambiar de rama
+Cambiar de rama: 
 git checkout main
 
-Eliminar una rama local
+Eliminar una rama local: 
 git branch -d nombre-de-rama
 
-Eliminar rama remota
+Eliminar rama remota: 
 git push origin --delete nombre-de-rama
 
-# 📌 Estado y seguimiento
+## 📌 Estado y seguimiento
 
-Ver cambios pendientes
+Ver cambios pendientes: 
 git status
 
-Ver diferencias en archivos
+Ver diferencias en archivos: 
 git diff
 
-# ➕ Añadir archivos al commit
+## ➕ Añadir archivos al commit
 
-Añadir un archivo específico
+Añadir un archivo específico: 
 git add archivo
 
-Añadir todo
+Añadir todo: 
 git add .
 
-# 💾 Commits
+## 💾 Commits
 
-Crear un commit
+Crear un commit: 
 git commit -m "Descripción del cambio"
 
-Modificar el último commit (sin cambiar contenido)
+Modificar el último commit (sin cambiar contenido): 
 git commit --amend -m "Nuevo mensaje"
 
-# 🚀 Subir cambios (Push)
+## 🚀 Subir cambios (Push)
 
 git push origin nombre-de-rama
 
-# 📥 Bajar cambios (Pull)
+## 📥 Bajar cambios (Pull)
 
 git pull
 
-# 🔄 Actualizar rama con main
+## 🔄 Actualizar rama con main
 
-Parado dentro de tu rama de trabajo
+Parado dentro de tu rama de trabajo: 
 git pull origin main
 
-# 🧹 Limpiar archivos no deseados
+## 🧹 Limpiar archivos no deseados
 
 git clean -f         # Eliminar archivos sin seguimiento
 git clean -fd        # Eliminar archivos y carpetas sin seguimiento
 
-# ✨ Comandos útiles para PBIP
+## ✨ Comandos útiles para PBIP
 
 Ver solo los cambios en archivos del modelo (JSON)
 git diff -- Model/
 
-Ver cambios del reporte
+Ver cambios del reporte:
 git diff -- Report/
 
 
