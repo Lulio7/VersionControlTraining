@@ -160,3 +160,7 @@ Volver al commit anterior desde la terminal:
 
 git reset --hard HEAD~1
 git push origin <branch> --force
+
+## 9. Recursos adicionales
+
+Archivo con comandos básicos: git-commands.md
